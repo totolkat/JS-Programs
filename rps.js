@@ -1,12 +1,10 @@
-import process from "process";
-
 while (true) {
     let userAction = prompt("Pick rock, paper or scissors")
     let compAction = Math.floor(Math.random() * 4)
 
     if (userAction.toLowerCase() !== "rock" && userAction.toLowerCase() !== "paper" && userAction.toLowerCase() !== "scissors") {
         console.log("You didn't put rock, paper or scissors...")
-        process.exit(0)
+        break;
     }
 
     switch (userAction.toLowerCase()) {
