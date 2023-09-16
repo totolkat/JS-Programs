@@ -1,6 +1,7 @@
 while (true) {
     let userAction = prompt("Pick rock, paper or scissors")
-    let compAction = Math.floor(Math.random() * 4)
+    let possibleactions = ["rock", "paper", "scissors"]
+    let compAction = possibleactions[Math.floor(Math.random() * possibleactions.length)]
 
     if (userAction.toLowerCase() !== "rock" && userAction.toLowerCase() !== "paper" && userAction.toLowerCase() !== "scissors") {
         console.log("You didn't put rock, paper or scissors...")
@@ -20,35 +21,35 @@ while (true) {
         }
 
     switch (compAction) {
-        case 1:
+        case "rock":
             console.log("Computer chose rock.");
             break;
-        case 2:
+        case "paper":
             console.log("Computer chose paper.");
             break;
-        case 3:
+        case "scissors":
             console.log("Computer chose scissors.");
             break;
 }
 
 
 
-    if (userAction === "rock" && compAction === 3) {
+    if (userAction === "rock" && compAction === "scissors") {
         console.log("Rock smashes scissors. You win!");
 
-    } else if (userAction === "rock" && compAction === 2) {
+    } else if (userAction === "rock" && compAction === "paper") {
         console.log("Paper covers rock. You lose.");
 
-    } else if (userAction === "paper" && compAction === 1) {
+    } else if (userAction === "paper" && compAction === "rock") {
         console.log("Paper covers rock. You win!");
 
-    } else if (userAction === "paper" && compAction === 3) {
+    } else if (userAction === "paper" && compAction === "paper") {
         console.log("Scissors cuts paper. You lose.");
 
-    } else if (userAction === "scissors" && compAction === 3) {
+    } else if (userAction === "scissors" && compAction === "paper") {
         console.log("Scissors cuts paper. You win!")
 
-    } else if (userAction === "scissors" &&  compAction === 1) {
+    } else if (userAction === "scissors" &&  compAction === "rock") {
         console.log("Rock smashes scissors. You lose.")
 
     } else {
